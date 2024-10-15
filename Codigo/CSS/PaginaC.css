@@ -7,18 +7,37 @@
 body, html {
     height: 100%;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 footer {
-    background-color: #333;
+    background-color: darkred;
     color: white;
     text-align: center;
     padding: 15px 0;
     height: 60px;
     width: 100%;
-    position: fixed;
+    position: center;
     top: 0;
     left: 0;
+}
+
+footer a {
+    color: white; 
+    text-decoration: none;
+}
+
+footer a:link,
+footer a:visited {
+    color: white; 
+}
+
+footer a:hover {
+    color: black; 
+}
+
+footer a:active {
+    color: black; 
 }
 
 .contenedor {
@@ -79,18 +98,25 @@ footer {
     font-size: 1.2em;
 }
 
-.inferior {
-    width: 500px;
-    height: 150px;
-    background-color: #aaa;
-    border: 1px solid #999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.cuadrado:hover p {
+    color: blue;
+    cursor: pointer;
 }
 
-.cuadrado p {
-    margin: 0;
-    color: black;
-    font-size: 1em;
+.contenedor a{
+    text-decoration: none;
+}
+
+.contenedor a:link,
+.contenedor a:visited {
+    color: blue; 
+}
+
+.contenedor a:hover {
+    color: black; 
+}
+
+.contenedor a:active {
+    color: black; 
 }
