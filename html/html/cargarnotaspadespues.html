@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas Escolares</title>
+    <link rel="stylesheet" href="../CSS/cano.css">
+</head>
+<body>
+    <header>
+        <a href="sesion.html"><img src="../imagen/logo.png" alt="Logo de la escuela" class="logo"></a>
+        <h1>Colegio Dr. Ernesto Guevara</h1>
+    </header>
+
+    <main>
+        <label for="cursoSelect">Selecciona un curso:</label>
+    <select id="cursoSelect">
+        <option value="">--Seleccionar--</option>
+        <option value="7mo1">7mo 1ra</option>
+        <option value="7mo2">7mo 2da</option>
+        <!-- Agrega más opciones según los cursos que tengas -->
+    </select>
+
+    <label for="alumnoSelect">Selecciona un alumno:</label>
+    <select id="alumnoSelect" disabled>
+        <option value="">--Seleccionar--</option>
+    </select>
+        <br>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Materia</th>
+                    <th colspan="3">1° Cuatrimestre</th>
+                    <th colspan="3">2° Cuatrimestre</th>
+                    <th>Calificación Anual</th>
+                    <th>Calificación Diciembre / Acreditación Técnica</th>
+                    <th>Calificación Febrero / Marzo</th>
+                    <th>Calificación Definitiva</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>1° Informe</th>
+                    <th>2° Informe</th>
+                    <th>Nota</th>
+                    <th>1° Informe</th>
+                    <th>2° Informe</th>
+                    <th>Nota</th>
+                    <th>Nota</th>
+                    <th>Nota</th>
+                    <th>Nota</th>
+                    <th>Nota</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Matemática</td>
+                    <td id="matematica-cuatrimestre1-informe1" onclick="abrirModal('matematica-cuatrimestre1-informe1')">-</td>
+                    <td id="matematica-cuatrimestre1-informe2" onclick="abrirModal('matematica-cuatrimestre1-informe2')">-</td>
+                    <td id="matematica-cuatrimestre1-nota" onclick="abrirModal('matematica-cuatrimestre1-nota')">-</td>
+                    <td id="matematica-cuatrimestre2-informe1" onclick="abrirModal('matematica-cuatrimestre2-informe1')">-</td>
+                    <td id="matematica-cuatrimestre2-informe2" onclick="abrirModal('matematica-cuatrimestre2-informe2')">-</td>
+                    <td id="matematica-cuatrimestre2-nota" onclick="abrirModal('matematica-cuatrimestre2-nota')">-</td>
+                    <td id="matematica-calificacion-anual" onclick="abrirModal('matematica-calificacion-anual')">-</td>
+                    <td id="matematica-calificacion-diciembre" onclick="abrirModal('matematica-calificacion-diciembre')">-</td>
+                    <td id="matematica-calificacion-febrero" onclick="abrirModal('matematica-calificacion-febrero')">-</td>
+                    <td id="matematica-calificacion-definitiva" onclick="abrirModal('matematica-calificacion-definitiva')">-</td>
+                </tr>
+                <tr>
+                    <td>Inglés Técnico</td>
+                    <td id="ingles-tecnico-cuatrimestre1-informe1" onclick="abrirModal('ingles-tecnico-cuatrimestre1-informe1')">-</td>
+                    <td id="ingles-tecnico-cuatrimestre1-informe2" onclick="abrirModal('ingles-tecnico-cuatrimestre1-informe2')">-</td>
+                    <td id="ingles-tecnico-cuatrimestre1-nota" onclick="abrirModal('ingles-tecnico-cuatrimestre1-nota')">-</td>
+                    <td id="ingles-tecnico-cuatrimestre2-informe1" onclick="abrirModal('ingles-tecnico-cuatrimestre2-informe1')">-</td>
+                    <td id="ingles-tecnico-cuatrimestre2-informe2" onclick="abrirModal('ingles-tecnico-cuatrimestre2-informe2')">-</td>
+                    <td id="ingles-tecnico-cuatrimestre2-nota" onclick="abrirModal('ingles-tecnico-cuatrimestre2-nota')">-</td>
+                    <td id="ingles-tecnico-calificacion-anual" onclick="abrirModal('ingles-tecnico-calificacion-anual')">-</td>
+                    <td id="ingles-tecnico-calificacion-diciembre" onclick="abrirModal('ingles-tecnico-calificacion-diciembre')">-</td>
+                    <td id="ingles-tecnico-calificacion-febrero" onclick="abrirModal('ingles-tecnico-calificacion-febrero')">-</td>
+                    <td id="ingles-tecnico-calificacion-definitiva" onclick="abrirModal('ingles-tecnico-calificacion-definitiva')">-</td>
+                </tr>
+                <tr>
+                    <td>Marco Jurídico y derechos del trabajo</td>
+                    <td id="marco-juridico-cuatrimestre1-informe1" onclick="abrirModal('marco-juridico-cuatrimestre1-informe1')">-</td>
+                    <td id="marco-juridico-cuatrimestre1-informe2" onclick="abrirModal('marco-juridico-cuatrimestre1-informe2')">-</td>
+                    <td id="marco-juridico-cuatrimestre1-nota" onclick="abrirModal('marco-juridico-cuatrimestre1-nota')">-</td>
+                    <td id="marco-juridico-cuatrimestre2-informe1" onclick="abrirModal('marco-juridico-cuatrimestre2-informe1')">-</td>
+                    <td id="marco-juridico-cuatrimestre2-informe2" onclick="abrirModal('marco-juridico-cuatrimestre2-informe2')">-</td>
+                    <td id="marco-juridico-cuatrimestre2-nota" onclick="abrirModal('marco-juridico-cuatrimestre2-nota')">-</td>
+                    <td id="marco-juridico-calificacion-anual" onclick="abrirModal('marco-juridico-calificacion-anual')">-</td>
+                    <td id="marco-juridico-calificacion-diciembre" onclick="abrirModal('marco-juridico-calificacion-diciembre')">-</td>
+                    <td id="marco-juridico-calificacion-febrero" onclick="abrirModal('marco-juridico-calificacion-febrero')">-</td>
+                    <td id="marco-juridico-calificacion-definitiva" onclick="abrirModal('marco-juridico-calificacion-definitiva')">-</td>
+                </tr>
+                <tr>
+                    <td>TÉCNICA: Asistencia 2</td>
+                    <td id="asistencia2-cuatrimestre1-informe1" onclick="abrirModal('asistencia2-cuatrimestre1-informe1')">-</td>
+                    <td id="asistencia2-cuatrimestre1-informe2" onclick="abrirModal('asistencia2-cuatrimestre1-informe2')">-</td>
+                    <td id="asistencia2-cuatrimestre1-nota" onclick="abrirModal('asistencia2-cuatrimestre1-nota')">-</td>
+                    <td id="asistencia2-cuatrimestre2-informe1" onclick="abrirModal('asistencia2-cuatrimestre2-informe1')">-</td>
+                    <td id="asistencia2-cuatrimestre2-informe2" onclick="abrirModal('asistencia2-cuatrimestre2-informe2')">-</td>
+                    <td id="asistencia2-cuatrimestre2-nota" onclick="abrirModal('asistencia2-cuatrimestre2-nota')">-</td>
+                    <td id="asistencia2-calificacion-anual" onclick="abrirModal('asistencia2-calificacion-anual')">-</td>
+                    <td id="asistencia2-calificacion-diciembre" onclick="abrirModal('asistencia2-calificacion-diciembre')">-</td>
+                    <td id="asistencia2-calificacion-febrero" onclick="abrirModal('asistencia2-calificacion-febrero')">-</td>
+                    <td id="asistencia2-calificacion-definitiva" onclick="abrirModal('asistencia2-calificacion-definitiva')">-</td>
+                </tr>
+                <tr>
+                    <td>TÉCNICA: Autogestión</td>
+                    <td id="autogestion-cuatrimestre1-informe1" onclick="abrirModal('autogestion-cuatrimestre1-informe1')">-</td>
+                    <td id="autogestion-cuatrimestre1-informe2" onclick="abrirModal('autogestion-cuatrimestre1-informe2')">-</td>
+                    <td id="autogestion-cuatrimestre1-nota" onclick="abrirModal('autogestion-cuatrimestre1-nota')">-</td>
+                    <td id="autogestion-cuatrimestre2-informe1" onclick="abrirModal('autogestion-cuatrimestre2-informe1')">-</td>
+                    <td id="autogestion-cuatrimestre2-informe2" onclick="abrirModal('autogestion-cuatrimestre2-informe2')">-</td>
+                    <td id="autogestion-cuatrimestre2-nota" onclick="abrirModal('autogestion-cuatrimestre2-nota')">-</td>
+                    <td id="autogestion-calificacion-anual" onclick="abrirModal('autogestion-calificacion-anual')">-</td>
+                    <td id="autogestion-calificacion-diciembre" onclick="abrirModal('autogestion-calificacion-diciembre')">-</td>
+                    <td id="autogestion-calificacion-febrero" onclick="abrirModal('autogestion-calificacion-febrero')">-</td>
+                    <td id="autogestion-calificacion-definitiva" onclick="abrirModal('autogestion-calificacion-definitiva')">-</td>
+                </tr>
+                <tr>
+                    <td>TÉCNICA: Hardware 4</td>
+                    <td id="hardware4-cuatrimestre1-informe1" onclick="abrirModal('hardware4-cuatrimestre1-informe1')">-</td>
+                    <td id="hardware4-cuatrimestre1-informe2" onclick="abrirModal('hardware4-cuatrimestre1-informe2')">-</td>
+                    <td id="hardware4-cuatrimestre1-nota" onclick="abrirModal('hardware4-cuatrimestre1-nota')">-</td>
+                    <td id="hardware4-cuatrimestre2-informe1" onclick="abrirModal('hardware4-cuatrimestre2-informe1')">-</td>
+                    <td id="hardware4-cuatrimestre2-informe2" onclick="abrirModal('hardware4-cuatrimestre2-informe2')">-</td>
+                    <td id="hardware4-cuatrimestre2-nota" onclick="abrirModal('hardware4-cuatrimestre2-nota')">-</td>
+                    <td id="hardware4-calificacion-anual" onclick="abrirModal('hardware4-calificacion-anual')">-</td>
+                    <td id="hardware4-calificacion-diciembre" onclick="abrirModal('hardware4-calificacion-diciembre')">-</td>
+                    <td id="hardware4-calificacion-febrero" onclick="abrirModal('hardware4-calificacion-febrero')">-</td>
+                    <td id="hardware4-calificacion-definitiva" onclick="abrirModal('hardware4-calificacion-definitiva')">-</td>
+                </tr>
+                <tr>
+                    <td>TÉCNICA: Prácticas profesionalizantes 2</td>
+                    <td id="materia1-cuatrimestre1-informe1" onclick="abrirModal('materia1-cuatrimestre1-informe1')">-</td>
+                    <td id="materia1-cuatrimestre1-informe2" onclick="abrirModal('materia1-cuatrimestre1-informe2')">-</td>
+                    <td id="materia1-cuatrimestre1-nota" onclick="abrirModal('materia1-cuatrimestre1-nota')">-</td>
+                    <td id="materia1-cuatrimestre2-informe1" onclick="abrirModal('materia1-cuatrimestre2-informe1')">-</td>
+                    <td id="materia1-cuatrimestre2-informe2" onclick="abrirModal('materia1-cuatrimestre2-informe2')">-</td>
+                    <td id="materia1-cuatrimestre2-nota" onclick="abrirModal('materia1-cuatrimestre2-nota')">-</td>
+                    <td id="materia1-calificacion-anual" onclick="abrirModal('materia1-calificacion-anual')">-</td>
+                    <td id="materia1-calificacion-diciembre" onclick="abrirModal('materia1-calificacion-diciembre')">-</td>
+                    <td id="materia1-calificacion-febrero" onclick="abrirModal('materia1-calificacion-febrero')">-</td>
+                    <td id="materia1-calificacion-definitiva" onclick="abrirModal('materia1-calificacion-definitiva')">-</td>
+                </tr>
+                <tr>
+                    <td>TÉCNICA: Programación 4</td>
+                    <td id="materia2-cuatrimestre1-informe1" onclick="abrirModal('materia2-cuatrimestre1-informe1')">-</td>
+                    <td id="materia2-cuatrimestre1-informe2" onclick="abrirModal('materia2-cuatrimestre1-informe2')">-</td>
+                    <td id="materia2-cuatrimestre1-nota" onclick="abrirModal('materia2-cuatrimestre1-nota')">-</td>
+                    <td id="materia2-cuatrimestre2-informe1" onclick="abrirModal('materia2-cuatrimestre2-informe1')">-</td>
+                    <td id="materia2-cuatrimestre2-informe2" onclick="abrirModal('materia2-cuatrimestre2-informe2')">-</td>
+                    <td id="materia2-cuatrimestre2-nota" onclick="abrirModal('materia2-cuatrimestre2-nota')">-</td>
+                    <td id="materia2-calificacion-anual" onclick="abrirModal('materia2-calificacion-anual')">-</td>
+                    <td id="materia2-calificacion-diciembre" onclick="abrirModal('materia2-calificacion-diciembre')">-</td>
+                    <td id="materia2-calificacion-febrero" onclick="abrirModal('materia2-calificacion-febrero')">-</td>
+                    <td id="materia2-calificacion-definitiva" onclick="abrirModal('materia2-calificacion-definitiva')">-</td>
+                </tr>
+                <tr>
+                    <td>TÉCNICA: Redes 3</td>
+                    <td id="materia3-cuatrimestre1-informe1" onclick="abrirModal('materia3-cuatrimestre1-informe1')">-</td>
+                    <td id="materia3-cuatrimestre1-informe2" onclick="abrirModal('materia3-cuatrimestre1-informe2')">-</td>
+                    <td id="materia3-cuatrimestre1-nota" onclick="abrirModal('materia3-cuatrimestre1-nota')">-</td>
+                    <td id="materia3-cuatrimestre2-informe1" onclick="abrirModal('materia3-cuatrimestre2-informe1')">-</td>
+                    <td id="materia3-cuatrimestre2-informe2" onclick="abrirModal('materia3-cuatrimestre2-informe2')">-</td>
+                    <td id="materia3-cuatrimestre2-nota" onclick="abrirModal('materia3-cuatrimestre2-nota')">-</td>
+                    <td id="materia3-calificacion-anual" onclick="abrirModal('materia3-calificacion-anual')">-</td>
+                    <td id="materia3-calificacion-diciembre" onclick="abrirModal('materia3-calificacion-diciembre')">-</td>
+                    <td id="materia3-calificacion-febrero" onclick="abrirModal('materia3-calificacion-febrero')">-</td>
+                    <td id="materia3-calificacion-definitiva" onclick="abrirModal('materia3-calificacion-definitiva')">-</td>
+                </tr>
+                <tr>
+                    <td>EDI: Arduino 3</td>
+                    <td id="materia4-cuatrimestre1-informe1" onclick="abrirModal('materia4-cuatrimestre1-informe1')">-</td>
+                    <td id="materia4-cuatrimestre1-informe2" onclick="abrirModal('materia4-cuatrimestre1-informe2')">-</td>
+                    <td id="materia4-cuatrimestre1-nota" onclick="abrirModal('materia4-cuatrimestre1-nota')">-</td>
+                    <td id="materia4-cuatrimestre2-informe1" onclick="abrirModal('materia4-cuatrimestre2-informe1')">-</td>
+                    <td id="materia4-cuatrimestre2-informe2" onclick="abrirModal('materia4-cuatrimestre2-informe2')">-</td>
+                    <td id="materia4-cuatrimestre2-nota" onclick="abrirModal('materia4-cuatrimestre2-nota')">-</td>
+                    <td id="materia4-calificacion-anual" onclick="abrirModal('materia4-calificacion-anual')">-</td>
+                    <td id="materia4-calificacion-diciembre" onclick="abrirModal('materia4-calificacion-diciembre')">-</td>
+                    <td id="materia4-calificacion-febrero" onclick="abrirModal('materia4-calificacion-febrero')">-</td>
+                    <td id="materia4-calificacion-definitiva" onclick="abrirModal('materia4-calificacion-definitiva')">-</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p><a href="sesion.html">Inicio</a> | <a href="../index.html">Cerrar Sesión</a>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h2>Ingresar Nota</h2>
+            <input type="number" id="notaInput" placeholder="Ingrese la nota" min="1" max="10">
+            <button onclick="guardarNota()">Guardar</button>
+        </div>
+    </div>
+
+    <script src="../js/cano.js"></script>
+
+</body>
+</html>
