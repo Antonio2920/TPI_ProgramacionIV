@@ -26,7 +26,6 @@ document.getElementById('cursoSelect').addEventListener('change', function () {
     }
 });
 
-// Evento al seleccionar el alumno
 document.getElementById('alumnoSelect').addEventListener('change', async function () {
     const alumnoSeleccionado = this.value;
     const tablaNotasContainer = document.getElementById('tablaNotasContainer');
@@ -59,11 +58,18 @@ document.getElementById('alumnoSelect').addEventListener('change', async functio
                         const cellNota = document.createElement('td');
                         const inputNota = document.createElement('input');
                         inputNota.type = 'number';
-                        inputNota.min = '0';
+                        inputNota.min = '1';
                         inputNota.max = '10';
                         inputNota.placeholder = fieldName;
                         inputNota.value = notas[fieldName] || ''; // Cargar la nota existente o dejar vacío
                         inputNota.setAttribute('data-field', fieldName);
+
+                        // Limitar el valor entre 1 y 10
+                        inputNota.addEventListener('input', () => {
+                            if (inputNota.value < 1) inputNota.value = 1;
+                            if (inputNota.value > 10) inputNota.value = 10;
+                        });
+
                         cellNota.appendChild(inputNota);
                         row.appendChild(cellNota);
                     });
@@ -78,6 +84,7 @@ document.getElementById('alumnoSelect').addEventListener('change', async functio
         tablaNotasContainer.style.display = 'none';
     }
 });
+
 
 
 // Guardar notas al hacer clic en el botón

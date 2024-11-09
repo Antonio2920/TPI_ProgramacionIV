@@ -1,5 +1,5 @@
 document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevenir el envío del formulario
 
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -20,6 +20,11 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     })
     .then(data => {
         if (data.success) {
+            // Guarda el idusuario y NombreyApellido en localStorage
+            localStorage.setItem('idusuario', data.idusuario);
+            localStorage.setItem('NombreyApellido', data.NombreyApellido);
+
+            // Redirigir según el rol
             if (data.role === 'admin') {
                 window.location.href = 'html/sesion.html'; // Redirigir a la página del admin
             } else {
@@ -28,6 +33,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         }
     })
     .catch(error => {
-        alert(error.message);
+        alert(error.message); // Mostrar mensaje de error
     });
 });

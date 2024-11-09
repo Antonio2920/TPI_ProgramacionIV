@@ -47,7 +47,6 @@ app.post('/api/usuarios', (req, res) => {
 });
 
 
-// Ruta para autenticar un usuario
 app.post('/api/login', (req, res) => {
     const { username, password } = req.body;
     const query = "SELECT * FROM usuarios WHERE Usuarios = ? AND Contraseña = ?";
@@ -58,17 +57,18 @@ app.post('/api/login', (req, res) => {
         }
 
         if (results.length > 0) {
+            const user = results[0];  // Primero obtienes el primer usuario que coincide
             res.json({ 
                 success: true, 
-                role: results[0].Admin ? 'admin' : 'usuario',
-                idusuario: results[0].idusuario  // Aquí agregamos el idusuario
+                role: user.Admin ? 'admin' : 'usuario',
+                idusuario: user.idusuario,
+                NombreyApellido: user.NombreyApellido
             });
         } else {
             res.status(401).json({ success: false, message: "Credenciales incorrectas" });
         }
     });
 });
-
 
 
 app.get('/api/notas', (req, res) => {
@@ -192,19 +192,23 @@ app.get('/api/notas/:idusuario/:idmateria', (req, res) => {
 // Ruta para obtener las notas de un usuario específico
 app.get('/api/notas/:idusuario', (req, res) => {
     const { idusuario } = req.params;
-    const query = "SELECT * FROM notas WHERE Usuarios_idusuario = ?";
+    const query = `
+        SELECT n.*, m.NombreMateria 
+        FROM notas n 
+        JOIN materias m ON n.Materias_idmateria = m.idmateria 
+        WHERE n.Usuarios_idusuario = ?`;
 
     cone.query(query, [idusuario], (error, results) => {
         if (error) {
-            console.error("Error al obtener las notas:", error);
-            return res.status(500).json({ error: "Error al obtener las notas" });
+            console.error("Error al obtener notas:", error);
+            return res.status(500).json({ error: "Error al obtener notas" });
         }
 
         if (results.length === 0) {
             return res.status(404).json({ message: "No se encontraron notas para el usuario especificado." });
         }
 
-        res.json(results); // Devolvemos todas las notas del usuario
+        res.json(results);
     });
 });
 
